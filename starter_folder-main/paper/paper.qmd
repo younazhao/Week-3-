@@ -1,0 +1,79 @@
+---
+title: "STA304 Marriage License Statistics in 2024"
+author: 
+  - Wen Han Zhao
+thanks: "Code and data are available at: LINK."
+date: today
+date-format: long
+abstract: "Investigate the numbers of Marriage licensed in Toronto in year 2024"
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+```
+
+
+# Introduction
+
+We have simulated a data of Marriage licensed throughout 2024 and imported from Toronto Dataset. 
+
+@Torontodata
+
+We have used @ChatGPT to generate some codes for us and @Rohan for insight on this project. 
+
+
+
+# Graph and Data 
+
+Some of our data is from Toronto Dataset. 
+
+```{r}
+
+data |> 
+  ggplot(aes(x = date,
+             y = marriage_licenses)) +
+  geom_point() +
+  labs(
+    title = "Distribution of Toronto Marriages in 2024", 
+    x = "Date", 
+    y = "Marriage Licenses "
+  )
+```
+
+
+
+# Results
+
+The above graph shows a scatterplot of marriages in 2024 in Toronto. It varies by months. 
+
+
+# Discussion
+
+## Weaknesses and next steps
+
+Weakness is that the dataset might be too small. 
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+
+# Additional data details
+
+
+
+
+# References
+
+
